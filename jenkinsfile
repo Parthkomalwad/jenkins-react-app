@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Ensure the repository is checked out
-                checkout scm
+                // Use explicit Git checkout command
+                git branch: 'main', url: 'https://github.com/Parthkomalwad/jenkins-react-app.git'
             }
         }
         stage('Build') {
