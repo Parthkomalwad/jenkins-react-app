@@ -2,6 +2,12 @@ pipeline {
     agent any
     tools { nodejs "NODEJS" }
     stages {
+        stage('Checkout') {
+            steps {
+                // Ensure the repository is checked out
+                checkout scm
+            }
+        }
         stage('Build') {
             steps {
                 sh 'npm install'
