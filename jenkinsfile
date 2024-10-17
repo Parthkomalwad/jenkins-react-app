@@ -1,5 +1,13 @@
 pipeline {
     agent any
+    stages {
+        stage('Verify Docker Access') {
+            steps {
+                sh 'docker --version'
+            }
+        }
+    }
+    agent any
     tools { nodejs "NODEJS" }
     stages {
         stage('Build') {
