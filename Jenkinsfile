@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Use explicit Git checkout command
                 git branch: 'master', url: 'https://github.com/Parthkomalwad/jenkins-react-app.git'
             }
         }
