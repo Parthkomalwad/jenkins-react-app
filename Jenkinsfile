@@ -7,11 +7,6 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/Parthkomalwad/jenkins-react-app.git'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
         stage('Verify Docker Access') {
             steps {
                 sh 'docker --version'
