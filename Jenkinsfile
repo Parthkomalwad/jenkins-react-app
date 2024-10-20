@@ -2,10 +2,16 @@ pipeline {
     agent any
     tools { nodejs "NODEJS" }
 
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: 'master', description: 'Branch to build')
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/Parthkomalwad/jenkins-react-app.git'
+                script {
+                    git branch: "${params.BRANCH_NAME}", url: 'https://github.com/Parthkomalwad/jenkins-react-app.git'
+                }
             }
         }
 
